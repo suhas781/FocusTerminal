@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ffcc;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background: #111;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+#output {
+  white-space: pre-wrap;
+  min-height: 300px;
+  margin-bottom: 10px;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 5px;
+  animation: blink 1s step-end infinite;
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  color: #00ffcc;
+  font: inherit;
+  width: 100%;
+  outline: none;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes glitch {
+  0% { transform: skew(0.5deg); }
+  20% { transform: skew(-1deg); }
+  40% { transform: skew(0.5deg); }
+  60% { transform: skew(-0.5deg); }
+  80% { transform: skew(1deg); }
+  100% { transform: skew(0deg); }
+}
+
+#output {
+  animation: glitch 1.5s infinite;
+}
